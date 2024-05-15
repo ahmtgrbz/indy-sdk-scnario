@@ -45,7 +45,7 @@ cat var/lib/indy/sandbox/pool_transections_genesis
 
 7. projeyi çalıştırabiliriz
 ```
-python3 Scneario.py
+python3 Scnario.py
 ```
 
 Uyguluma çalıştığında aşğıdaki gibi görünür.
