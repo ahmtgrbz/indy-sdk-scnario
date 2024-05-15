@@ -1,7 +1,8 @@
+# HyperLedger Indy ve SDK kullanılarak gerçekleştirilen bir merkeziyetsiz kimlik senaryosu uygulaması
+
 ### Gereksinimler:
 •	Ubuntu 18.04.6 LTS
 •	 Docker
-
 
 ## Projeyi çalıştırmak için;
 
@@ -46,3 +47,7 @@ cat var/lib/indy/sandbox/pool_transections_genesis
 ```
 python3 Scneario.py
 ```
+
+Uyguluma çalıştığında aşğıdaki gibi görünür.
+![App](https://github.com/ahmtgrbz/indy-sdk-scnario/assets/44843548/4c4c235c-c382-4f66-b753-83b7e3a49f21)
+
