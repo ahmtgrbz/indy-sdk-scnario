@@ -114,11 +114,11 @@ async def create_credential_definition(issuer, schema_id):
                                                                transcript_cred_def['type'],
                                                                json.dumps(transcript_cred_def['config']))
     
-    print(f"{issuer['name']} -> {issuer['transcript_cred_def_id']} idli kimlik şemaya uygun oluşturuldu.")
+    print(f"{issuer['name']} -> {issuer['transcript_cred_def_id']} idli kimlik bilgisi tanımı şemaya uygun oluşturuldu.")
     
     cred_def_request = await ledger.build_cred_def_request(issuer['did'], issuer['transcript_cred_def'])
     await ledger.sign_and_submit_request(issuer['pool'], issuer['wallet'], issuer['did'], cred_def_request)
-    print(f"{issuer['name']} -> {issuer['transcript_cred_def_id']} idli kimlik üniversite kayıtlarına ekledni.")
+    print(f"{issuer['name']} -> {issuer['transcript_cred_def_id']} idli kimlik bilgisi tanımı üniversite kayıtlarına(cüzdanına) eklendi.")
 
 async def get_cred_def_from_ledger(pool_handle, _did, cred_def_id):
     get_cred_def_request = await ledger.build_get_cred_def_request(_did, cred_def_id)
@@ -358,12 +358,12 @@ async def run():
     print("----- 4. Adım süresi: {:.6f} saniye".format(time.time() - start_time))
     
     start_time = time.time()
-    print("\n-----5.Adım- Üniversite person için bir şemaya uygun transkrip oluşturur")
+    print("\n-----5.Adım- Üniversite transkript için şemadan Kimlik bilgisi tanımı oluşturur")
     await create_credential_definition(university, schema_id)
     print("----- 5. Adım süresi: {:.6f} saniye".format(time.time() - start_time))
     
     start_time = time.time()
-    print("\n-----6.Adım- Kişi üniverste sayfasından transkriptini ister.")
+    print("\n-----6.Adım- Kişi üniverste sayfasından transkriptini ister ve alır.")
     await get_credential(university, person)
     print("----- 6. Adım süresi: {:.6f} saniye".format(time.time() - start_time))
     
